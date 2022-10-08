@@ -4,9 +4,10 @@
 - latest-version : 1.1.0
 
 ## Support
-
-
 - vue: 2.x.x
+
+## Demo
+![button-demo](https://user-images.githubusercontent.com/48467846/194696828-711e3fa6-52e6-4029-adc8-c3516fcff737.gif)
 
 ## Installation
 
