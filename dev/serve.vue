@@ -11,7 +11,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" style="text-align: center; margin-top: 100px;">
     <vue2-button>click</vue2-button>
   </div>
 </template>
