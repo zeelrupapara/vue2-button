@@ -1,6 +1,6 @@
 {
   "name": "vue2-button",
-  "version": "1.1.1",
+  "version": "1.1.1-development",
   "description": "",
   "main": "dist/vue2-button.ssr.js",
   "browser": "dist/vue2-button.esm.js",
@@ -17,7 +17,8 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "semantic-release": "semantic-release --branches main"
   },
   "dependencies": {},
   "devDependencies": {
@@ -37,12 +38,17 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "^5.1.9",
     "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "semantic-release": "^19.0.5"
   },
   "peerDependencies": {
     "vue": "^2.6.14"
   },
   "engines": {
     "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeelrupapara/vue2-button.git"
   }
 }
