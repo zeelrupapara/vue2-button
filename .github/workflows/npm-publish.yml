@@ -5,9 +5,9 @@ name: Node.js Package
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: '*'
+    branches: ["*"]
 
 jobs:
   build:
@@ -32,11 +32,11 @@ jobs:
           node-version: 16
           cache: "npm"
           cache-dependency-path: "package-lock.json"
-          
+
       - name: Install Dependendcies
       - run: npm ci
-      
-      - name: Publish New Version 
+
+      - name: Publish New Version
       - run: npx run semantic-release
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
