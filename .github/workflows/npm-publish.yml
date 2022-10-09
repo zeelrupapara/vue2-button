@@ -12,8 +12,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.refs == 'refs/heads/main' }}
-
     strategy:
       matrix:
         node-version: [16.x]
