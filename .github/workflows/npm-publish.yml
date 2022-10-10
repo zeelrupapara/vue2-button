@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-              
+
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
@@ -43,7 +43,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Notify Telegram
         uses: appleboy/telegram-action@master
         with:
@@ -52,7 +52,9 @@ jobs:
           message: |
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
-            
+
             Repository: ${{ github.repository }}
-            
+
+            TESTING: ${{ github.ref_name }}
+
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
