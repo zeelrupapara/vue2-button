@@ -1,7 +1,8 @@
 {
   "name": "vue2-button",
   "version": "1.1.1-development",
-  "description": "",
+  "description": "custom button component for vue",
+  "keywords": ["vue", "custom-components","button"],
   "main": "dist/vue2-button.ssr.js",
   "browser": "dist/vue2-button.esm.js",
   "module": "dist/vue2-button.esm.js",
