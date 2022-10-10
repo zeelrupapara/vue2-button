@@ -1,0 +1,21 @@
+
+
+name: 'Notify Telegram Action'
+description: 'Notify via Telegram!'
+author: 'Jeel Rupapara'
+inputs:
+  commit_template:
+    required: false
+    description: 'Commit message template'
+  release_template:
+    required: false
+    description: 'Release message template'
+  status:
+    required: false
+    description: 'Job status'
+runs:
+  using: 'node16'
+  main: 'dist/main.js'
+branding:
+  icon: 'message-square'
+  color: 'blue'
