@@ -44,17 +44,18 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  alternative-template:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run success
+        run: exit 0
       - name: Notify Telegram
-        uses: appleboy/telegram-action@master
+        uses: ./
+        if: always()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
-
-            Repository: ${{ github.repository }}
-
-            TESTING: ${{ github.ref_name }}
-
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+          commit_template: ./templates/commit-alternative.mustache
+          status: ${{job.status}}
